@@ -23,6 +23,7 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
 const HomeMenu = document.querySelector('.home-menu');
 HomeMenu.addEventListener('click', (event) => {
       console.log(event);
+      console.log(HomeMenu.classList);
       HomeMenu.classList.toggle("active");
     });
 
