@@ -68,7 +68,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px;
+  padding: 80px 60px;
   gap: 40px;
 }
 
@@ -494,7 +494,10 @@ body {
     width: 100%;
   }
 
-  .hero,
+  .hero{
+    display: grid;
+    padding: 0;
+  }
   .about-section,
   .skills-section,
   .section,
