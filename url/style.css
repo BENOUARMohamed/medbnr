@@ -564,19 +564,5 @@ body {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-  #tsparticles {
-    display: none;
-  }
-  /* Optional: fine-tune individual canvas elements */
-  #tsparticles canvas {
-    width: 100% !important;
-    height: 100% !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: -10 !important;
-    pointer-events: none;
-
-}
-
+  
 }
