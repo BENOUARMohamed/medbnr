@@ -101,3 +101,28 @@ window.addEventListener('resize', () => {
 resizeCanvas();
 createStars();
 drawStars();
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // prevent actual form submission
+
+  const name = document.getElementById("name-input").value.trim();
+  const email = document.getElementById("email-input").value.trim();
+  const message = document.getElementById("message-input").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Simulated form submission
+  alert(`Thanks ${name}, your message has been sent!`);
+
+  // Reset the form
+  document.getElementById("contact-form").reset();
+});

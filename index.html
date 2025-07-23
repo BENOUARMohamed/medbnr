@@ -104,7 +104,7 @@
         <line x1="270" y1="200" x2="310" y2="260" />
 
         <!-- Nodes -->
-        <circle cx="100" cy="80" r="10" data-skill="python" data-level="8"/>
+        <circle cx="100" cy="80" r="10" data-skill="python"  data-level="8"/>
         <circle cx="150" cy="120" r="10" data-skill="TensorFlow" data-level="8" />
         <circle cx="200" cy="100" r="10"  data-skill="JavaScript" data-level="5"/>
         <circle cx="250" cy="140" r="10" data-skill="HTML5" data-level="10" />
@@ -150,9 +150,22 @@
 
   <!-- Contact -->
   <section id="contact" class="section cta">
-    <h2>Let’s start something great together</h2>
-    <button>Get in touch</button>
-  </section>
+  <h2>Let’s start something great together</h2>
+
+  <form id="contact-form">
+    <label for="name-input">Name:</label>
+    <input id="name-input" type="text" name="name" placeholder="Your name" title="Enter your name" required />
+
+    <label for="email-input">Email:</label>
+    <input id="email-input" type="email" name="email" placeholder="Your email address" title="Enter your email" required />
+
+    <label for="message-input">Message:</label>
+    <textarea id="message-input" name="message" placeholder="Your message" title="Enter your message" required></textarea>
+
+    <button type="submit">send <img src="./image/send.png" alt="" width="15"></button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
