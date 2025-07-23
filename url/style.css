@@ -564,5 +564,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-
+  #tsparticles {
+    display: none;
+  }
 }
