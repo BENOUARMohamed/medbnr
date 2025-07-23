@@ -16,21 +16,6 @@ body {
   z-index: -10;
 }
 
-#tsparticles canvas:nth-child(1){
-  width: 90% !important;
-  height: 100% !important;
-  position: fixed !important;
-  z-index: 0 !important;
-  top: 0px !important;
-  left: 0px !important;
-  pointer-events: none;
-}
-
-#starfield{
-  width:1443; 
-  height:954;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -340,7 +325,7 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  /*left: 100px;*/
+ 
   gap: 100px;
   flex-wrap: wrap;
   margin-top: 30px;
@@ -507,8 +492,10 @@ body {
 
 
 
-@media only screen and (max-width: 743px) {
-  
+@media screen and (max-width: 743px) {
+  body{
+    width: 100%;
+  }
 
   .hero,
   .about-section,
@@ -521,13 +508,13 @@ body {
   .cert-grid,
   .brain-svg {
     left: 0;
+      width: 100%;
+  max-width: 100%;
   }
 
   .brain-svg {
     position: relative;
     left: -100px;
-    width: 700px;
-    max-width: 600px;
     height: auto;
   }
 
@@ -585,5 +572,8 @@ body {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+  
+}
+@media screen  {
   
 }
