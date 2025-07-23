@@ -496,7 +496,7 @@ body {
 
   .hero{
     display: grid;
-    padding: 0;
+    padding: 20px;
   }
   .about-section,
   .skills-section,
