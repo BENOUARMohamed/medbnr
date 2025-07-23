@@ -524,6 +524,7 @@ body {
   }
 
   .home-menu {
+    display: block;
     height: 50px;
     width: 50px;
     position: relative;
