@@ -21,8 +21,9 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
 });
 
 const HomeMenu = document.querySelector('.home-menu');
-HomeMenu.addEventListener('click', () => {
-     HomeMenu.classList.toggle("active");
+HomeMenu.addEventListener('click', (event) => {
+      console.log(event);
+      HomeMenu.classList.toggle("active");
     });
 
 tsParticles.load({
