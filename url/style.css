@@ -498,7 +498,7 @@ body {
 
     }
      .active span:nth-child(2){
-        opacity: 0;
+        display: none;
      }
       .active span:nth-child(3){
         top: 50%;
