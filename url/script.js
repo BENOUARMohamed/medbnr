@@ -32,10 +32,10 @@ tsParticles.load({
       options: {
         particles: {
           number: {
-            value: 100,
+            value: 70,
             density: {
               enable: true,
-              area: 600
+              area: 60
             }
           },
           color: {
@@ -63,7 +63,7 @@ tsParticles.load({
           },
           links: {
             enable: true,
-            distance: 150,
+            distance: 80,
             color: "#ffffffff",
             opacity: 0.1,
             width: 1
@@ -91,7 +91,7 @@ tsParticles.load({
           },
           modes: {
             repulse: {
-              distance: 100,
+              distance: 70,
               duration: 0.4
             },
             push: {
