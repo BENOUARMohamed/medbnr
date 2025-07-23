@@ -10,6 +10,26 @@ body {
   color: #fff;
   width: 100%;
 }
+#tsparticles{
+  position: fixed;
+  inset: 0; 
+  z-index: -10;
+}
+
+#tsparticles canvas:nth-child(1){
+  width: 90% !important;
+  height: 100% !important;
+  position: fixed !important;
+  z-index: 0 !important;
+  top: 0px !important;
+  left: 0px !important;
+  pointer-events: none;
+}
+
+#starfield{
+  width:1443; 
+  height:954;
+}
 
 .header {
   display: flex;
@@ -488,6 +508,7 @@ body {
 
 
 @media only screen and (max-width: 743px) {
+  
 
   .hero,
   .about-section,
