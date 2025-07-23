@@ -251,9 +251,10 @@ body {
 }
 
 .brain-wrapper {
+  width: 100vh;
   position: relative;
   display: flex;
-  left: -200px;
+  left: -50px;
   justify-content: center;
   padding: 0;
 }
@@ -512,6 +513,7 @@ body {
   }
 
   .brain-wrapper {
+    width: 45vh;
     left: 0;
     height: auto;
   }
