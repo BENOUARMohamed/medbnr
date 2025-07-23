@@ -259,12 +259,15 @@ body {
 .brain-wrapper {
   position: relative;
   display: flex;
+  left: -200px;
   justify-content: center;
+  padding: 0;
 }
 
 .brain-svg {
-  width: 800px;
-  max-width: 800px;
+  padding: 0;
+  width: 100%;
+ 
   height: auto;
 }
 
@@ -505,16 +508,14 @@ body {
     display: grid;
   }
 
-  .cert-grid,
-  .brain-svg {
+  .cert-grid {
     left: 0;
       width: 100%;
   max-width: 100%;
   }
 
-  .brain-svg {
-    position: relative;
-    left: -100px;
+  .brain-wrapper {
+    left: 0;
     height: auto;
   }
 
