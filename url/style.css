@@ -184,6 +184,10 @@ body {
   margin-bottom: 50px;
 }
 
+.home-menu{
+  display: none;
+}
+
 .dot {
   width: 12px;
   height: 12px;
