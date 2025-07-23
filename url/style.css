@@ -490,17 +490,17 @@ body {
     .header .home-menu span:nth-child(3){
         top: 75%;
     }
-    .header .home-menu:active span:nth-child(1){
+    .active span:nth-child(1){
         top: 50%;
         transform: translate(-50%, -50%)
             rotate(45deg)
         ;
 
     }
-     .header .home-menu:active span:nth-child(2){
+     .active span:nth-child(2){
         opacity: 0;
      }
-      .header .home-menu:active span:nth-child(3){
+      .active span:nth-child(3){
         top: 50%;
         transform: translate(-50%, -50%)
             rotate(-45deg)
