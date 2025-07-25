@@ -19,6 +19,7 @@ body {
   top: 0;
   background: #0f1123;
   z-index: 100;
+    width: 100%;
 }
 
 .logo a {
@@ -563,6 +564,10 @@ body {
   body{
     width: 100%;
   }
+  .header{
+    position: relative;
+    width: 100%;
+  }
 
   .hero{
     display: grid;
@@ -574,15 +579,17 @@ body {
   .footer .ftr {
     display: grid;
   }
-
+.hero-image{
+  width: 60%;
+}
   .cert-grid {
-    left: 0;
+    left: -30px;
       width: 100%;
   max-width: 100%;
   }
 
   .brain-wrapper {
-    width: 45vh;
+    width: 100%;
     left: 0;
     height: auto;
   }
@@ -641,5 +648,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-  
+  .section.cta{
+    width: 80%;
+  }
 }
