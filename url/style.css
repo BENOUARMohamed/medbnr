@@ -565,10 +565,8 @@ body {
     width: 100%;
   }
   .header{
-    position: relative;
-    width: 100%;
+    width: 90%;
   }
-
   .hero{
     display: grid;
     padding: 20px;
