@@ -80,6 +80,26 @@ body {
 .hero-text h1 {
   font-size: 2.8em;
 }
+.hero-text h1 span:nth-child(1){
+  color: #7054c2;
+  font-size: 100PX;
+  font-weight: 900;
+}
+
+.hero-text h1 span:nth-child(2){
+  width: 17ch;
+  height: 50px;
+  animation: typing 2s steps(20) infinite alternate-reverse;
+  overflow: hidden;
+  display: inline-block;
+
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+}
 
 .hero-text h1:nth-child(2) {
   color: #38bdf8;
@@ -324,7 +344,6 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
- 
   gap: 100px;
   flex-wrap: wrap;
   margin-top: 30px;
@@ -576,6 +595,13 @@ body {
   .section,
   .footer .ftr {
     display: grid;
+  }
+  .hero-text h1 span:nth-child(1){
+    font-size: 80px;
+  }
+  .hero-text h1 span:nth-child(2){
+    font-size: 30px;
+    height: 35px;
   }
 .hero-image{
   width: 60%;
