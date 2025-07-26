@@ -555,7 +555,8 @@ body {
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-  border-color: #7dd3fc;
+  border-color: #7054c2;
+  background: #191d24;
   outline: none;
 }
 
