@@ -53,6 +53,7 @@ body {
 .who {
   width: 12ch;
   height: 20px;
+  white-space: nowrap;
   animation: typing 2s steps(12) infinite alternate-reverse;
   overflow: hidden;
   display: inline-block;
@@ -89,6 +90,7 @@ body {
 .hero-text h1 span:nth-child(2){
   width: 17ch;
   height: 50px;
+  white-space: nowrap;
   animation: typing 2s steps(20) infinite alternate-reverse;
   overflow: hidden;
   display: inline-block;
