@@ -295,16 +295,20 @@ body {
 }
 
 .brain-svg circle {
-  fill: #fff;
+  fill: #1e293b; /* Darker fill to make icons stand out */
   stroke: #7f5af0;
   stroke-width: 2;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, fill 0.2s;
 }
 
 .brain-svg circle:hover {
-  transform: scale(1.01);
-  fill: #7f5af0;
+  transform: scale(1.05);
+  fill: #38bdf8;
+}
+
+.brain-svg image {
+  pointer-events: none; /* Ensures mouse events go to the circle below */
 }
 
 .tooltip {

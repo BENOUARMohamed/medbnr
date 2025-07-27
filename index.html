@@ -9,6 +9,7 @@
   <link rel="icon" href="./image/ab.png">
   <link rel="stylesheet" href="./url/style.css" />
   <script defer src="./url/script.js"></script>
+  <script defer src="./url/skills-animation.js"></script>
 </head>
 <body>
       <div id="tsparticles" style="position: fixed; inset: 0; z-index: -10;"><canvas data-generated="true"
@@ -18,7 +19,7 @@
     </div>
   <!-- Header -->
   <header class="header">
-    <h2 class="logo"><a href="">medbnr.com</a></h2>
+    <h2 class="logo"><a href="#">medbnr.com</a></h2>
     <nav class="navbar">
       <ul id="ul">
         <li><a class="tag-bar" href="#about">About me</a></li>
@@ -53,7 +54,7 @@
   <!-- About -->
   <section id="about" class="about-section">
     <div class="left">
-      <h1>About me</h1>
+      <h2>About me</h2>
     </div>
     <div class="right">
         <div class="window">
@@ -91,28 +92,51 @@
 
       <!-- SVG Brain Structure -->
       <svg viewBox="0 0 500 400" class="brain-svg">
-        <!-- Edges -->
-        <line x1="100" y1="80" x2="150" y2="120" />
-        <line x1="150" y1="120" x2="200" y2="100" />
-        <line x1="200" y1="100" x2="250" y2="140" />
-        <line x1="250" y1="140" x2="300" y2="100" />
-        <line x1="300" y1="100" x2="350" y2="140" />
-        <line x1="150" y1="120" x2="180" y2="180" />
-        <line x1="250" y1="140" x2="270" y2="200" />
-        <line x1="180" y1="180" x2="220" y2="240" />
-        <line x1="270" y1="200" x2="310" y2="260" />
-
-        <!-- Nodes -->
-        <circle cx="100" cy="80" r="10" data-skill="python"  data-level="8"/>
-        <circle cx="150" cy="120" r="10" data-skill="TensorFlow" data-level="8" />
-        <circle cx="200" cy="100" r="10"  data-skill="JavaScript" data-level="5"/>
-        <circle cx="250" cy="140" r="10" data-skill="HTML5" data-level="10" />
-        <circle cx="300" cy="100" r="10" data-skill="ARM Cortex-M" data-level="7" />
-        <circle cx="350" cy="140" r="10" data-skill="CSS3" data-level="7" />
-        <circle cx="180" cy="180" r="10"  data-skill="IoT" data-level="9"/>
-        <circle cx="220" cy="240" r="10"  data-skill="RTOS" data-level="9"/>
-        <circle cx="270" cy="200" r="10"  data-skill="PCB Design" data-level="10" />
-        <circle cx="310" cy="260" r="10"  data-skill="AI" data-level="9"/>
+        <!-- Group for dynamic lines, will be populated by JavaScript -->
+        <g id="dynamic-lines"></g>
+        
+        <!-- Nodes: Each node is a group containing a circle and a skill icon -->
+        <!-- NOTE: You will need to create the icon image files (e.g., python.svg) in the './image/skills/' directory. -->
+        <g class="skill-node">
+          <circle cx="100" cy="100" r="30" data-skill="Python" data-level="8"/>
+          <image href="./image/skills/python.svg" x="80" y="80" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="180" cy="180" r="30" data-skill="TensorFlow" data-level="8"/>
+          <image href="./image/skills/tensorflow.svg" x="160" y="160" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="250" cy="100" r="30" data-skill="JavaScript" data-level="5"/>
+          <image href="./image/skills/javascript.svg" x="230" y="80" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="350" cy="150" r="30" data-skill="HTML5" data-level="10"/>
+          <image href="./image/skills/html5.svg" x="330" y="130" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="400" cy="80" r="30" data-skill="ARM Cortex-M" data-level="7"/>
+          <image href="./image/skills/arm.svg" x="380" y="60" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="420" cy="220" r="30" data-skill="CSS3" data-level="7"/>
+          <image href="./image/skills/css3.svg" x="400" y="200" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="150" cy="280" r="30" data-skill="IoT" data-level="9"/>
+          <image href="./image/skills/iot.svg" x="130" y="260" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="250" cy="320" r="30" data-skill="RTOS" data-level="9"/>
+          <image href="./image/skills/rtos.svg" x="230" y="300" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="350" cy="280" r="30" data-skill="PCB Design" data-level="10"/>
+          <image href="./image/skills/pcb.svg" x="330" y="260" height="40" width="40"/>
+        </g>
+        <g class="skill-node">
+          <circle cx="80" cy="200" r="30" data-skill="AI" data-level="9"/>
+          <image href="./image/skills/ai.svg" x="60" y="180" height="40" width="40"/>
+        </g>
       </svg>
     </div>
   </section>
@@ -129,7 +153,7 @@
        <div class="card">
             <img src="./image/nvidia.png" alt="Cert 1" />
             <div class="card-body">
-                <h1 class="card-title">NVIDIA</h1>
+                <h3 class="card-title">NVIDIA</h3>
                 <p class="card-sub-title">Fundamentals of Deep Learning</p>
                 <a href="https://learn.nvidia.com/certificates?id=ADzDSxY1SCqB1UDEUloTwQ"><button class="card-btn">Visit it</button></a>
             </div>
@@ -137,7 +161,7 @@
         <div class="card">
             <img src="./image/sololearn.png" alt="Cert 2" />
             <div class="card-body">
-                <h1 class="card-title">SOLOLEARN</h1>
+                <h3 class="card-title">SOLOLEARN</h3>
                 <p class="card-sub-title">Introduction to Python</p>
                 <a href="https://www.sololearn.com/en/certificates/CC-OSCALKZP"><button class="card-btn">Visit it</button></a>
             </div>
@@ -149,20 +173,21 @@
 
   <!-- Contact -->
   <section id="contact" class="section cta">
-  <h2>Let’s start something great together</h2>
 
   <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
-
-   <input type="hidden" name="access_key" value="4ecddb5b-dab2-451d-9810-b631f4ebc5af">
-    <label for="name-input">Name:</label>
+    <h2>Let’s start something great together</h2>
+    <input type="hidden" name="access_key" value="3f8cba41-839a-4995-8114-a30266b70fa8">
+    <label for="name-input" class="sr-only">Your name</label>
     <input id="name-input" type="text" name="name" placeholder="Your name" title="Enter your name" required />
 
-    <label for="email-input">Email:</label>
+    <label for="email-input" class="sr-only">Your email</label>
     <input id="email-input" type="email" name="email" placeholder="Your email address" title="Enter your email" required />
 
-    <label for="message-input">Message:</label>
+    <label for="message-input" class="sr-only">Your message</label>
     <textarea id="message-input" name="message" placeholder="Your message" title="Enter your message" required></textarea>
 
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    
     <button type="submit">submit <img src="./image/send.png" alt="" width="15"></button>
   </form>
 </section>
@@ -184,13 +209,13 @@
             </div>
         </div>
         <div class="info">
-                <a href=""><img src="./image/phone.png" alt="" width="6%"> +(213) 774814578</a>
+                <a href="tel:+213774814578"><img src="./image/phone.png" alt="" width="6%"> +(213) 774814578</a>
                 <br>
                 <br>
-                <a href=""><img src="./image/mail.png" alt="" width="6%"> moh@medbnr.com</a>
-         </div>
+                <a href="mailto:moh@medbnr.com"><img src="./image/mail.png" alt="" width="6%"> moh@medbnr.com</a>
+        </div>
     </div>
-    <p>© 2025 Mohammed BENOUAR — All Rights Reserved</p>
+    <p>© 2024 Mohammed BENOUAR — All Rights Reserved</p>
   </footer>
   </body>
 </html>

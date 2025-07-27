@@ -13,6 +13,21 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
     }
   });
 
+  circle.addEventListener("mousemove", e => {
+    // The tooltip's parent is .brain-wrapper, which has position: relative.
+    // We need to calculate the mouse position relative to this wrapper.
+    const wrapperRect = e.currentTarget.closest('.brain-wrapper').getBoundingClientRect();
+    
+    // e.clientX/Y is relative to the viewport.
+    // wrapperRect.left/top is also relative to the viewport.
+    // The difference gives us the position inside the wrapper.
+    const left = e.clientX - wrapperRect.left;
+    const top = e.clientY - wrapperRect.top;
+
+    // Position the tooltip with an offset from the cursor
+    tooltip.style.left = `${left + 20}px`; 
+    tooltip.style.top = `${top}px`;
+  });
 
   circle.addEventListener("mouseleave", () => {
     tooltip.style.display = "none";
