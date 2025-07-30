@@ -181,7 +181,7 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
 }
 
 .hero-text h1 span:nth-child(2){
-  width: 14ch;
+  width: 13.5ch;
   height: 50px;
   white-space: nowrap;
   animation: typing 2s steps(22) infinite alternate-reverse;
