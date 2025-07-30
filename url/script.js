@@ -35,12 +35,18 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
   });
 });
 
-const HomeMenu = document.querySelector('.home-menu');
-HomeMenu.addEventListener('click', (event) => {
-      console.log(event);
-      console.log(HomeMenu.classList);
-      HomeMenu.classList.toggle("active");
-    });
+const homeMenu = document.querySelector('.home-menu');
+const navbar = document.querySelector('.navbar');
+
+homeMenu.addEventListener('click', () => {
+  homeMenu.classList.toggle('active');
+  navbar.classList.toggle('active');
+});
+
+// Active link highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.navbar a');
+const header = document.querySelector('.header');
 
 const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');
@@ -55,6 +61,23 @@ function resizeCanvas() {
 const numLayers = 3; // Number of parallax layers
 const starsPerLayer = numStars / numLayers;
 const wind = { x: 0.1, y: 0.05 }; // Wind influence (optional)
+
+// Moved scroll listener outside of resizeCanvas to prevent creating multiple listeners
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) { // 150px offset to trigger earlier
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active-link');
+        }
+    });
+});
 stars = [];
 
 function createStars() {
