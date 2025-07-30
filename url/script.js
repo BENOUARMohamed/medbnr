@@ -1,3 +1,32 @@
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+
+    // Animate letters for the preloader
+    const loaderH2 = document.querySelector('.loader-logo h2');
+    const loaderH6 = document.querySelector('.loader-logo h6');
+
+    if (loaderH2) {
+        const text = loaderH2.textContent;
+        loaderH2.innerHTML = text.split('').map((char, i) => `<span style="animation-delay: ${i * 50}ms">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+    }
+    if (loaderH6) {
+        const text = loaderH6.textContent;
+        // Delay the subtitle animation
+        loaderH6.innerHTML = text.split('').map((char, i) => `<span style="animation-delay: ${(i * 40) + 500}ms">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+    }
+
+    if (preloader) {
+        // Use a timeout to hide the preloader after the letter animation completes
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+            document.body.classList.add('loaded');
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove();
+            });
+        }, 2500); // This duration should be long enough for the animation to play
+    }
+});
+
 const tooltip = document.getElementById("tooltip");
 const tooltipSkill = document.getElementById("tooltip-skill");
 const tooltipLevel = document.getElementById("tooltip-level");
