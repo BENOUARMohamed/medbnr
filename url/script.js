@@ -27,6 +27,24 @@ window.addEventListener('load', () => {
     }
 });
 
+// Scroll-triggered animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // Stop observing the element after it has become visible to prevent re-animation
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger when 10% of the element is visible
+});
+
+// Observe all elements with the 'animate-on-scroll' class
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+elementsToAnimate.forEach(el => observer.observe(el));
+
 const tooltip = document.getElementById("tooltip");
 const tooltipSkill = document.getElementById("tooltip-skill");
 const tooltipLevel = document.getElementById("tooltip-level");
@@ -104,6 +122,13 @@ const wind = { x: 0.1, y: 0.05 }; // Wind influence (optional)
 
 // Moved scroll listener outside of resizeCanvas to prevent creating multiple listeners
 window.addEventListener('scroll', () => {
+    // Add 'scrolled' class to header on scroll for animation
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;

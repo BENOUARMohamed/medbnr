@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -70,16 +74,65 @@ body {
 }
 
 /* Initially hide content and prepare for entry animation */
-.header, .hero, .about-section, .skills-section, .section, .footer {
+/* Animate header and hero immediately on load */
+.header, .hero {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s; /* Added delay */
 }
 
 /* When body has 'loaded' class, animate content in */
-body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded .skills-section, body.loaded .section, body.loaded .footer {
+body.loaded .header, body.loaded .hero {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Prepare other sections for scroll animation */
+/* Base style for all animated elements */
+.anim-from-top, .anim-from-bottom, .anim-from-left, .anim-from-right {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Initial positions */
+.anim-from-top { transform: translateY(-30px); }
+.anim-from-bottom { transform: translateY(30px); }
+.anim-from-left { transform: translateX(-30px); }
+.anim-from-right { transform: translateX(30px); }
+
+/* Final (visible) state */
+.animate-on-scroll.is-visible .anim-from-top,
+.animate-on-scroll.is-visible .anim-from-bottom,
+.animate-on-scroll.is-visible .anim-from-left,
+.animate-on-scroll.is-visible .anim-from-right {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Staggered animation delays for a more dynamic reveal */
+.about-section.is-visible .right.anim-from-right {
+  transition-delay: 0.2s;
+}
+
+.skills-section.is-visible .brain-wrapper.anim-from-bottom {
+  transition-delay: 0.2s;
+}
+
+#certificates.is-visible > p.anim-from-top {
+  transition-delay: 0.15s;
+}
+#certificates.is-visible .cert-grid .card.anim-from-bottom:nth-of-type(1) {
+  transition-delay: 0.3s;
+}
+#certificates.is-visible .cert-grid .card.anim-from-bottom:nth-of-type(2) {
+  transition-delay: 0.45s;
+}
+
+.footer.is-visible .info.anim-from-right {
+  transition-delay: 0.2s;
+}
+.footer.is-visible > p.anim-from-bottom {
+  transition-delay: 0.4s;
 }
 
 .header {
@@ -95,7 +148,14 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
   background: rgba(15, 17, 35, 0.5); /* Semi-transparent background for the whole header */
   backdrop-filter: blur(10px);      /* The blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
-  transition: padding 0.3s ease;
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for the header when the page is scrolled */
+.header.scrolled {
+  padding: 0.8rem 8%;
+  background: rgba(21, 24, 48, 0.8); /* Slightly more opaque background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .navbar {
@@ -270,6 +330,7 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
 
 .brain-bg {
   position: absolute;
+
   left: 0;
   top: 100px;
   width: 200px;
