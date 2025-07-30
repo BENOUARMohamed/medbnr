@@ -181,10 +181,10 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
 }
 
 .hero-text h1 span:nth-child(2){
-  width: 22ch;
+  width: 14ch;
   height: 50px;
   white-space: nowrap;
-  animation: typing 2s steps(25) infinite alternate-reverse;
+  animation: typing 2s steps(22) infinite alternate-reverse;
   overflow: hidden;
   display: inline-block;
 
