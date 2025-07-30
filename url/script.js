@@ -205,27 +205,61 @@ resizeCanvas();
 createStars();
 drawStars();
 
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent actual form submission
+const contactForm = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent default submission
 
-  const name = document.getElementById("name-input").value.trim();
-  const email = document.getElementById("email-input").value.trim();
-  const message = document.getElementById("message-input").value.trim();
+  const form = e.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const formData = new FormData(form);
+
+  // Basic client-side validation
+  const name = formData.get('name').trim();
+  const email = formData.get('email').trim();
+  const message = formData.get('message').trim();
 
   if (!name || !email || !message) {
     alert("Please fill in all fields.");
     return;
   }
-
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
     alert("Please enter a valid email address.");
     return;
   }
 
-  // Simulated form submission
-  alert(`Thanks ${name}, your message has been sent!`);
+  // Start animation and disable button
+  submitButton.classList.add('sending');
+  submitButton.disabled = true;
 
-  // Reset the form
-  document.getElementById("contact-form").reset();
+  // Use fetch to submit to web3forms
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // Fade out the form
+      contactForm.style.transition = 'opacity 0.5s ease-out';
+      contactForm.style.opacity = '0';
+      // After fade out, hide form and show success message
+      setTimeout(() => {
+        contactForm.style.display = 'none';
+        successMessage.classList.add('visible');
+      }, 500); // Match transition duration
+    } else {
+      alert(data.message || "An error occurred.");
+      submitButton.classList.remove('sending');
+      submitButton.disabled = false;
+    }
+  })
+  .catch(error => {
+    console.error("Form submission error:", error);
+    alert("An error occurred. Please try again later.");
+    submitButton.classList.remove('sending');
+    submitButton.disabled = false;
+  });
 });
