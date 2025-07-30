@@ -66,15 +66,26 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
 
 const homeMenu = document.querySelector('.home-menu');
 const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.navbar a');
 
 homeMenu.addEventListener('click', () => {
   homeMenu.classList.toggle('active');
   navbar.classList.toggle('active');
 });
 
+// Close mobile menu when a navigation link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Check if the mobile menu is active before closing
+        if (navbar.classList.contains('active')) {
+            homeMenu.classList.remove('active');
+            navbar.classList.remove('active');
+        }
+    });
+});
+
 // Active link highlighting on scroll
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.navbar a');
 const header = document.querySelector('.header');
 
 const canvas = document.getElementById('starfield');

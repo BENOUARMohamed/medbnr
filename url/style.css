@@ -783,7 +783,8 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
     /* Animation: Fade in/out */
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transform: translateY(-15px); /* Start slightly above screen for slide effect */
+    transition: opacity 0.4s ease, transform 0.4s ease;
     
     /* Center the navigation links */
     display: flex;
@@ -794,6 +795,7 @@ body.loaded .header, body.loaded .hero, body.loaded .about-section, body.loaded 
   .navbar.active {
     opacity: 1;
     pointer-events: auto;
+    transform: translateY(0); /* Slide into view */
   }
 
   .navbar ul {
