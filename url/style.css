@@ -465,15 +465,18 @@ body.loaded .header, body.loaded .hero {
   stroke-width: 2;
 }
 
-.brain-svg circle {
+.skill-node {
+  cursor: pointer;
+}
+
+.brain-svg .skill-node circle {
   fill: #1e293b; /* Darker fill to make icons stand out */
   stroke: #7f5af0;
   stroke-width: 2;
-  cursor: pointer;
   transition: transform 0.2s, fill 0.2s;
 }
 
-.brain-svg circle:hover {
+.brain-svg .skill-node:hover circle {
   transform: scale(1.05);
   fill: #38bdf8;
 }
@@ -842,7 +845,7 @@ body.loaded .header, body.loaded .hero {
 /* =================================
    Responsive Design (Tablet & Mobile)
 ==================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .header {
     padding: 1rem 5%; /* Adjust padding for smaller screens */
   }
@@ -881,9 +884,11 @@ body.loaded .header, body.loaded .hero {
   }
 
   .hero-image {
+    position: relative;
+    right: 50px;
     width: 70%; /* Adjust image size */
     max-width: 280px;
-    margin: 20px auto 0; /* Center the image */
+    margin: 5px auto 0; /* Center the image */
     justify-self: center;
   }
 
@@ -922,8 +927,8 @@ body.loaded .header, body.loaded .hero {
     width: 100%;
     height: 100vh;
     background: rgba(15, 17, 35, 0.95);
-    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     
     /* Animation: Fade in/out */
     opacity: 0;

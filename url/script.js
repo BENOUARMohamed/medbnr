@@ -49,8 +49,10 @@ const tooltip = document.getElementById("tooltip");
 const tooltipSkill = document.getElementById("tooltip-skill");
 const tooltipLevel = document.getElementById("tooltip-level");
 
-document.querySelectorAll(".brain-svg circle").forEach(circle => {
-  circle.addEventListener("mouseenter", e => {
+document.querySelectorAll(".skill-node").forEach(node => {
+  node.addEventListener("mouseenter", e => {
+    const circle = node.querySelector('circle');
+    if (!circle) return;
     const skill = circle.getAttribute("data-skill");
     const level = circle.getAttribute("data-level");
     if (skill && level) {
@@ -60,7 +62,7 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
     }
   });
 
-  circle.addEventListener("mousemove", e => {
+  node.addEventListener("mousemove", e => {
     // The tooltip's parent is .brain-wrapper, which has position: relative.
     // We need to calculate the mouse position relative to this wrapper.
     const wrapperRect = e.currentTarget.closest('.brain-wrapper').getBoundingClientRect();
@@ -76,7 +78,7 @@ document.querySelectorAll(".brain-svg circle").forEach(circle => {
     tooltip.style.top = `${top}px`;
   });
 
-  circle.addEventListener("mouseleave", () => {
+  node.addEventListener("mouseleave", () => {
     tooltip.style.display = "none";
     tooltipLevel.style.width = "0%";
   });
