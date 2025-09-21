@@ -29,4 +29,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "auto: update cv.pdf"
-          file_pattern: cv.pdf
+          file_pattern: cv.pdf
