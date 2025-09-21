@@ -1,0 +1,32 @@
+name: Build CV PDF
+
+on:
+  push:
+    paths:
+      - 'cv.tex'
+      - '.github/workflows/cv-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # <-- important
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # uses GITHUB_TOKEN
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          latexmk_use_xelatex: true
+
+      - name: Commit cv.pdf
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: update cv.pdf"
+          file_pattern: cv.pdf
