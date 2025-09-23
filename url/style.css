@@ -298,6 +298,7 @@ body.loaded .header, body.loaded .hero {
   width: 350px;
   border-radius: 100px 0 100px 0;
   background: #7f5af0;
+  box-shadow: 2px 5px 10px #7E5BF0;
   padding: 10px;
 }
 
