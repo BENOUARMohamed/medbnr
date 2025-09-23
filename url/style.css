@@ -298,15 +298,7 @@ body.loaded .header, body.loaded .hero {
   width: 350px;
   border-radius: 100px 0 100px 0;
   box-shadow: 3px 6px 15px #7E5BF0;
-  /* 3D animated cursor effect on image */
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
-  will-change: transform;
-}
-
-.hero-image img:hover {
-  transform: perspective(600px) rotateY(12deg) scale(1.04);
-  box-shadow: 0 18px 40px -8px #7f5af0, 0 2px 8px #0ea5e9;
+  
 }
 
 .section {
