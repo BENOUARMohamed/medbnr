@@ -297,8 +297,8 @@ body.loaded .header, body.loaded .hero {
 .hero-image img {
   width: 350px;
   border-radius: 100px 0 100px 0;
-  background:1px #7f5af0;
-  box-shadow: 2px 5px 10px #7E5BF0;
+  background: linear-gradient(135deg, #351992, #7E5BF0);
+  box-shadow: 3px 6px 15px #7E5BF0;
   padding: 10px;
 }
 
