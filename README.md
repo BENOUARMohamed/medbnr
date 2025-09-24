@@ -38,6 +38,7 @@ Folder Structure
 yaml
 Copy code
 /
+
 ├── index.html        # Main entry point
 
 ├──url/               #css and javascript
@@ -47,6 +48,7 @@ Copy code
 ├── Screenshot 2025-09-24 151659.png   # Desktop preview
 
 ├── Screenshot 2025-09-24 151913.png   # Mobile preview
+
 └── README.md         # This file
 Contributing
 Contributions are welcome!
