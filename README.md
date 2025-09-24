@@ -1,15 +1,20 @@
 # medbnr
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-A personal portfolio website that showcases my profile, skills, projects, and certificates.  
-Built using **HTML**, **CSS**, and **JavaScript** only (no frameworks).
+A personal / portfolio web project built by **Mohamed BENOUAR** (medbnr).  
+Showcases profile, skills, projects, certificates, and contact info. Deployed at: https://medbnr.com :contentReference[oaicite:0]{index=0}
+  
 
 ## Preview
 
-### Desktop
-![Desktop Screenshot](./desktopsc.png)
+### Desktop  
+[<img src="./desktopsc.png" width="400"/>](./desktopsc.png)
 
-### Mobile
-![Mobile Screenshot](./mobilesc.png)
+### Mobile  
+[<img src="./mobilesc.png" width="250"/>](./mobilesc.png)
+
+*(Click on the images to view in full size)*
+
 
 ## Features
 
@@ -34,10 +39,13 @@ yaml
 Copy code
 /
 ├── index.html        # Main entry point
-├── style.css         # Stylesheets
-├── script.js         # JavaScript (if any)
+
+├──url/               #css and javascript
+
 ├── images/           # Images and icons
+
 ├── Screenshot 2025-09-24 151659.png   # Desktop preview
+
 ├── Screenshot 2025-09-24 151913.png   # Mobile preview
 └── README.md         # This file
 Contributing
