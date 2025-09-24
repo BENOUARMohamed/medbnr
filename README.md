@@ -1,7 +1,7 @@
 # medbnr
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-A personal / portfolio web project built by **Mohamed BENOUAR** (medbnr).  
+A personal / portfolio web project built by **Mohammed Benouar** (medbnr).  
 Showcases profile, skills, projects, certificates, and contact info. Deployed at: https://medbnr.com :contentReference[oaicite:0]{index=0}
   
 
