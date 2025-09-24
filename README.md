@@ -65,6 +65,6 @@ License
 This project is licensed under the MIT License.
 
 Contact
-Author: Mohamed BENOUAR
+Author: Mohammed Benouar
 
 GitHub: BENOUARMohamed
